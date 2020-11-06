@@ -24,6 +24,7 @@
     "ngf-bootstrap": "0.0.5",
     "ngx-bootstrap": "^6.1.0",
     "rxjs": "6.3.3",
+    "toastr": "^2.1.4",
     "zone.js": "0.8.26"
   },
   "devDependencies": {
