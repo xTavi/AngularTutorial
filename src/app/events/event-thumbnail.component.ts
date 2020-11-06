@@ -16,7 +16,11 @@ import { OuterSubscriber } from 'rxjs/internal/OuterSubscriber';
     <div>Time: {{event.time}}</div>
     <div>Price: \${{event.price}}</div>
   </div>
-`
+`,
+  styles: [`
+  .pad-left { margin-left: 10px; }
+  .well div { color: #bbb }
+  `]
 })
 
 export class EventThumbnailComponent {
