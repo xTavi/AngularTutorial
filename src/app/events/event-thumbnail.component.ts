@@ -4,8 +4,7 @@ import {
   Output,
   EventEmitter
 } from "@angular/core";
-
-import { OuterSubscriber } from 'rxjs/internal/OuterSubscriber';
+import { IEvent } from './shared/index'
 
 @Component({
   selector: 'event-thumbnail',
@@ -24,7 +23,7 @@ import { OuterSubscriber } from 'rxjs/internal/OuterSubscriber';
 })
 
 export class EventThumbnailComponent {
-  @Input() event: any
+  @Input() event: IEvent
   @Output() eventClick = new EventEmitter()
 
 }
