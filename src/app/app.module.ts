@@ -12,7 +12,7 @@ import {
 } from './events/index';
 
 import { EventsAppComponent } from './events-app.component';
-import { NavBarComponent } from './nav/navbar.component'
+import { NavBarComponent } from './nav/navbar.component';
 import { ToastrService } from './common/toastr.service';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
@@ -43,7 +43,7 @@ import { AuthService } from './user/auth.service';
 })
 export class AppModule { }
 
-export function checkDirtyState(component:CreateEventComponent) {
+export function checkDirtyState(component: CreateEventComponent) {
   if (component.isDirty) {
     return window.confirm('You have not saved this event, do\
  you really want to cancel?');

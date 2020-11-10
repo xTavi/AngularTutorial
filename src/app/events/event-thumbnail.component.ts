@@ -3,8 +3,8 @@ import {
   Input,
   Output,
   EventEmitter
-} from "@angular/core";
-import { IEvent } from './shared/index'
+} from '@angular/core';
+import { IEvent } from './shared/index';
 
 @Component({
   selector: 'event-thumbnail',
@@ -23,7 +23,7 @@ import { IEvent } from './shared/index'
 })
 
 export class EventThumbnailComponent {
-  @Input() event: IEvent
-  @Output() eventClick = new EventEmitter()
+  @Input() event: IEvent;
+  @Output() eventClick = new EventEmitter();
 
 }
