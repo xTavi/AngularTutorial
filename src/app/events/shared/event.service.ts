@@ -14,10 +14,15 @@ export class EventService {
     return EVENTS.find(event => event.id === id );
   }
 
-  saveEvent(event){
+  saveEvent(event) {
     event.id = 99;
-    event.session = []
+    event.session = [];
     EVENTS.push(event);
+  }
+
+  updateEvent(event) {
+    const index = EVENTS.findIndex(x => x.id === event.id);
+    EVENTS[index] = event;
   }
 }
 
