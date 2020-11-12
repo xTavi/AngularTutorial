@@ -25,7 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CollapsibleWellComponent } from './common/collapsible-well.component';
 
 
-let toastr: Toastr = window['toastr'];
+const toastr: Toastr = window['toastr'];
 
 @NgModule({
   imports: [
