@@ -18,7 +18,9 @@ import {
   JQ_TOKEN,
   TOASTR_TOKEN,
   Toastr,
-  CollapsibleWellComponent
+  CollapsibleWellComponent,
+  SimpleModalComponent,
+  ModalTriggerDirective
 } from './common/index';
 
 import { EventsAppComponent } from './events-app.component';
@@ -50,10 +52,13 @@ let jQuery = window['$'];
     CreateSessionComponent,
     SessionListComponent,
     CollapsibleWellComponent,
-    DurationPipe
+    DurationPipe,
+    SimpleModalComponent,
+    ModalTriggerDirective
   ],
   providers: [EventService,
-    { provide: TOASTR_TOKEN, useValue: toastr},
+    { provide: TOASTR_TOKEN, useValue: toastr },
+    { provide: JQ_TOKEN, useValue: jQuery },
     EventRouteActivator,
     EventListResolver,
     AuthService,
