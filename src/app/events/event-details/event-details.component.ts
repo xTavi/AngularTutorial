@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { _localeFactory } from '@angular/core/src/application_module';
 import { ActivatedRoute, Params } from '@angular/router';
 import { from } from 'rxjs';
 import { EventService } from '../shared/event.service';
@@ -23,11 +24,12 @@ export class EventDetailsComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.params.forEach((params: Params) => {
-      this.event = this.eventService.getEvent(+params['id']);
-      this.addMode = false;
-    });
-  }
+      this.route.data.forEach((data) => {
+        this.event = data['event'];
+        this.addMode = false;
+      });
+    }
+
 
   addSession() {
     this.addMode = true;
