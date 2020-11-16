@@ -36,7 +36,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const toastr: Toastr = window['toastr'];
-let jQuery = window['$'];
+const jQuery = window['$'];
 @NgModule({
   imports: [
     BrowserModule,
