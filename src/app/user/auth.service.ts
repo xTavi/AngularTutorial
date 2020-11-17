@@ -14,9 +14,9 @@ export class AuthService {
 
   loginUser(userName: string, password: string) {
     const loginInfo = { username: userName, password: password}
-    const options = { hearders: new HttpHeaders({ 'Content-Type': 'application/json' })};
+    const options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
 
-    return this.http.post('/api/login', loginInfo).
+    return this.http.post('/api/login', loginInfo, options).
     pipe(tap(data => {
       this.currentUser = <IUser>data['user'];
     })).
@@ -49,5 +49,9 @@ export class AuthService {
   updateCurrentUser(firstName: string, lastName: string) {
     this.currentUser.firstName = firstName;
     this.currentUser.lastName = lastName;
+
+    const options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
+
+    return this.http.put(`/api/users/${this.currentUser.id}`, this.currentUser, options);
   }
 }
