@@ -42,7 +42,7 @@ const jQuery = window['$'];
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' }),
     HttpClientModule
   ],
   declarations: [

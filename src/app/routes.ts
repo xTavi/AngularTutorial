@@ -19,5 +19,5 @@ export const appRoutes: Routes = [
   { path: 'events/sessions/new', component: CreateSessionComponent },
   { path: '404', component: Error404Component },
   { path: '', redirectTo: '/events', pathMatch: 'full' },
-  { path: 'user', loadChildren: './user/user.module#UserModule'}
+  { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule)}
 ];
