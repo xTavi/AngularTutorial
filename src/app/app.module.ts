@@ -14,7 +14,8 @@ import {
   VoterService,
   UpvoteComponent,
   LocationValidator,
-  EventResolver
+  EventResolver,
+  EventTableComponent
 } from './events/index';
 
 import {
@@ -33,8 +34,8 @@ import { appRoutes } from './routes';
 import { Error404Component } from './errors/404.component';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatSliderModule } from '@angular/material/slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
 
 
 const toastr: Toastr = window['toastr'];
@@ -42,12 +43,13 @@ const jQuery = window['$'];
 @NgModule({
   imports: [
     BrowserModule,
+    MatTableModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' }),
     HttpClientModule,
     BrowserAnimationsModule
-    ],
+  ],
   declarations: [
     EventsAppComponent,
     EventsListComponent,
@@ -63,7 +65,8 @@ const jQuery = window['$'];
     SimpleModalComponent,
     ModalTriggerDirective,
     UpvoteComponent,
-    LocationValidator
+    LocationValidator,
+    EventTableComponent
   ],
   providers: [EventService,
     { provide: TOASTR_TOKEN, useValue: toastr },
