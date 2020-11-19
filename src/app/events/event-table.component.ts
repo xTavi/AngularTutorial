@@ -1,15 +1,17 @@
 import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IEvent } from './shared';
+import { MatButton } from '@angular/material/button';
 
 @Component({
-  templateUrl: './event-table.component.html'
+  templateUrl: './event-table.component.html',
+  styles: ['table { width: 100%; }']
 })
 export class EventTableComponent implements OnInit {
   events: IEvent[];
-  displayedColumns: string[] = ['id', 'name', 'price'];
+  displayedColumns: string[] = ['id', 'name', 'price', 'date', 'time', 'location'];
   dataSource: TableElement[];
-
+  color = 'red';
 
   constructor( private route: ActivatedRoute) {
   }
@@ -17,7 +19,7 @@ export class EventTableComponent implements OnInit {
   ngOnInit() {
     this.events = this.route.snapshot.data['events'];
     this.dataSource = this.events.map((object) => {
-      const {date, time, location, imageUrl, sessions, ...newObj} = object;
+      const {imageUrl, sessions, ...newObj} = object;
       return newObj;
     });
 
