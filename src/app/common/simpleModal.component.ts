@@ -10,7 +10,7 @@ import { JQ_TOKEN } from './jQuery.service';
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span>&times</span></button>
+            <button type="button" class="close" data-dismiss="modal"><span></span></button>
             <h4 class='modal-title'>{{title}}</h4>
           </div>
           <div class="modal-body" (click)="closeModal()">
