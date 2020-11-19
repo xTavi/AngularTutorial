@@ -33,6 +33,8 @@ import { appRoutes } from './routes';
 import { Error404Component } from './errors/404.component';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSliderModule } from '@angular/material/slider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 const toastr: Toastr = window['toastr'];
@@ -43,8 +45,9 @@ const jQuery = window['$'];
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' }),
-    HttpClientModule
-  ],
+    HttpClientModule,
+    BrowserAnimationsModule
+    ],
   declarations: [
     EventsAppComponent,
     EventsListComponent,
