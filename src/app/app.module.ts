@@ -36,7 +36,8 @@ import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 const toastr: Toastr = window['toastr'];
 const jQuery = window['$'];
@@ -48,7 +49,9 @@ const jQuery = window['$'];
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' }),
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule
   ],
   declarations: [
     EventsAppComponent,

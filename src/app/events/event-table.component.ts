@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IEvent } from './shared';
-import { MatButton } from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   templateUrl: './event-table.component.html',
@@ -10,7 +10,7 @@ import { MatButton } from '@angular/material/button';
 export class EventTableComponent implements OnInit {
   events: IEvent[];
   displayedColumns: string[] = ['id', 'name', 'price', 'date', 'time', 'location'];
-  dataSource: TableElement[];
+  dataSource;
   color = 'red';
 
   constructor( private route: ActivatedRoute) {
@@ -31,10 +31,12 @@ export class EventTableComponent implements OnInit {
 
   }
 
-}
+  eventLocation(event: IEvent): string {
+    if (event.location) {
+      return event.location.city;
+    } else {
+      return 'Online Event';
+    }
+  }
 
-export interface TableElement {
-  id: number;
-  name: string;
-  price: number;
 }
